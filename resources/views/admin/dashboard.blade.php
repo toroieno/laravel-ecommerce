@@ -1,5 +1,5 @@
   @extends('admin_layout.admin')
-  
+
 
   @section('content')
   {{-- start content --}}
@@ -11,11 +11,11 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard</h1>
+            <h1 class="m-0 text-dark">Thống kê</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
               <li class="breadcrumb-item active">Dashboard v1</li>
             </ol>
           </div><!-- /.col -->
@@ -35,12 +35,12 @@
               <div class="inner">
                 <h3>150</h3>
 
-                <p>New Orders</p>
+                <p>Đơn hàng mới</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">Thông tin chi tiết <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -48,14 +48,14 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3>76<sup style="font-size: 20px">%</sup></h3>
 
-                <p>Bounce Rate</p>
+                <p>Đơn hàng thành công</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">Thông tin chi tiết <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -65,12 +65,12 @@
               <div class="inner">
                 <h3>44</h3>
 
-                <p>User Registrations</p>
+                <p>Người dùng đăng ký</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">Thông tin chi tiết <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -80,12 +80,12 @@
               <div class="inner">
                 <h3>65</h3>
 
-                <p>Unique Visitors</p>
+                <p>Khách truy cập một lần</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">Thông tin chi tiết <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -100,12 +100,12 @@
               <div class="card-header">
                 <h3 class="card-title">
                   <i class="fas fa-chart-pie mr-1"></i>
-                  Sales
+                  Biểu đồ bán hàng
                 </h3>
                 <div class="card-tools">
                   <ul class="nav nav-pills ml-auto">
                     <li class="nav-item">
-                      <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
+                      <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Vùng</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut</a>
@@ -129,7 +129,7 @@
             <!-- /.card -->
 
             <!-- DIRECT CHAT -->
-            <div class="card direct-chat direct-chat-primary">
+            {{-- <div class="card direct-chat direct-chat-primary">
               <div class="card-header">
                 <h3 class="card-title">Direct Chat</h3>
 
@@ -214,11 +214,11 @@
                   </div>
                   <!-- /.direct-chat-msg -->
 
-                </div>
+                </div> --}}
                 <!--/.direct-chat-messages-->
 
                 <!-- Contacts are loaded here -->
-                <div class="direct-chat-contacts">
+                {{-- <div class="direct-chat-contacts">
                   <ul class="contacts-list">
                     <li>
                       <a href="#">
@@ -327,7 +327,7 @@
                 </form>
               </div>
               <!-- /.card-footer-->
-            </div>
+            </div> --}}
             <!--/.direct-chat -->
 
             <!-- TO DO List -->
@@ -335,7 +335,7 @@
               <div class="card-header">
                 <h3 class="card-title">
                   <i class="ion ion-clipboard mr-1"></i>
-                  To Do List
+                  Công việc cần xử lí
                 </h3>
 
                 <div class="card-tools">
@@ -363,7 +363,7 @@
                       <label for="todoCheck1"></label>
                     </div>
                     <!-- todo text -->
-                    <span class="text">Design a nice theme</span>
+                    <span class="text">Thiết kế giao diện mới</span>
                     <!-- Emphasis label -->
                     <small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small>
                     <!-- General tools such as edit or delete-->
@@ -381,40 +381,8 @@
                       <input type="checkbox" value="" name="todo2" id="todoCheck2" checked>
                       <label for="todoCheck2"></label>
                     </div>
-                    <span class="text">Make the theme responsive</span>
+                    <span class="text">Tạo giao diện responsive</span>
                     <small class="badge badge-info"><i class="far fa-clock"></i> 4 hours</small>
-                    <div class="tools">
-                      <i class="fas fa-edit"></i>
-                      <i class="fas fa-trash-o"></i>
-                    </div>
-                  </li>
-                  <li>
-                    <span class="handle">
-                      <i class="fas fa-ellipsis-v"></i>
-                      <i class="fas fa-ellipsis-v"></i>
-                    </span>
-                    <div  class="icheck-primary d-inline ml-2">
-                      <input type="checkbox" value="" name="todo3" id="todoCheck3">
-                      <label for="todoCheck3"></label>
-                    </div>
-                    <span class="text">Let theme shine like a star</span>
-                    <small class="badge badge-warning"><i class="far fa-clock"></i> 1 day</small>
-                    <div class="tools">
-                      <i class="fas fa-edit"></i>
-                      <i class="fas fa-trash-o"></i>
-                    </div>
-                  </li>
-                  <li>
-                    <span class="handle">
-                      <i class="fas fa-ellipsis-v"></i>
-                      <i class="fas fa-ellipsis-v"></i>
-                    </span>
-                    <div  class="icheck-primary d-inline ml-2">
-                      <input type="checkbox" value="" name="todo4" id="todoCheck4">
-                      <label for="todoCheck4"></label>
-                    </div>
-                    <span class="text">Let theme shine like a star</span>
-                    <small class="badge badge-success"><i class="far fa-clock"></i> 3 days</small>
                     <div class="tools">
                       <i class="fas fa-edit"></i>
                       <i class="fas fa-trash-o"></i>
@@ -429,7 +397,7 @@
                       <input type="checkbox" value="" name="todo5" id="todoCheck5">
                       <label for="todoCheck5"></label>
                     </div>
-                    <span class="text">Check your messages and notifications</span>
+                    <span class="text">Kiểm tra tin nhắn và thông báo</span>
                     <small class="badge badge-primary"><i class="far fa-clock"></i> 1 week</small>
                     <div class="tools">
                       <i class="fas fa-edit"></i>
@@ -445,7 +413,7 @@
                       <input type="checkbox" value="" name="todo6" id="todoCheck6">
                       <label for="todoCheck6"></label>
                     </div>
-                    <span class="text">Let theme shine like a star</span>
+                    <span class="text">Kiểm tra đơn hàng</span>
                     <small class="badge badge-secondary"><i class="far fa-clock"></i> 1 month</small>
                     <div class="tools">
                       <i class="fas fa-edit"></i>
@@ -456,7 +424,7 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <button type="button" class="btn btn-info float-right"><i class="fas fa-plus"></i> Add item</button>
+                <button type="button" class="btn btn-info float-right"><i class="fas fa-plus"></i> Thêm nhiệm vụ mới</button>
               </div>
             </div>
             <!-- /.card -->
@@ -470,7 +438,7 @@
               <div class="card-header border-0">
                 <h3 class="card-title">
                   <i class="fas fa-map-marker-alt mr-1"></i>
-                  Visitors
+                  Người truy cập
                 </h3>
                 <!-- card tools -->
                 <div class="card-tools">
@@ -498,17 +466,17 @@
                 <div class="row">
                   <div class="col-4 text-center">
                     <div id="sparkline-1"></div>
-                    <div class="text-white">Visitors</div>
+                    <div class="text-white">Người truy cập</div>
                   </div>
                   <!-- ./col -->
                   <div class="col-4 text-center">
                     <div id="sparkline-2"></div>
-                    <div class="text-white">Online</div>
+                    <div class="text-white">Đang hoạt động</div>
                   </div>
                   <!-- ./col -->
                   <div class="col-4 text-center">
                     <div id="sparkline-3"></div>
-                    <div class="text-white">Sales</div>
+                    <div class="text-white">Bán hàng</div>
                   </div>
                   <!-- ./col -->
                 </div>
@@ -522,7 +490,7 @@
               <div class="card-header border-0">
                 <h3 class="card-title">
                   <i class="fas fa-th mr-1"></i>
-                  Sales Graph
+                  Biểu đồ bán hàng
                 </h3>
 
                 <div class="card-tools">
@@ -544,21 +512,21 @@
                     <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
                            data-fgColor="#39CCCC">
 
-                    <div class="text-white">Mail-Orders</div>
+                    <div class="text-white">Đặt hàng qua Mail</div>
                   </div>
                   <!-- ./col -->
                   <div class="col-4 text-center">
                     <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
                            data-fgColor="#39CCCC">
 
-                    <div class="text-white">Online</div>
+                    <div class="text-white">Trực tuyến</div>
                   </div>
                   <!-- ./col -->
                   <div class="col-4 text-center">
                     <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
                            data-fgColor="#39CCCC">
 
-                    <div class="text-white">In-Store</div>
+                    <div class="text-white">Trong Shop</div>
                   </div>
                   <!-- ./col -->
                 </div>
@@ -569,7 +537,7 @@
             <!-- /.card -->
 
             <!-- Calendar -->
-            <div class="card bg-gradient-success">
+            {{-- <div class="card bg-gradient-success">
               <div class="card-header border-0">
 
                 <h3 class="card-title">
@@ -604,7 +572,7 @@
                 <div id="calendar" style="width: 100%"></div>
               </div>
               <!-- /.card-body -->
-            </div>
+            </div> --}}
             <!-- /.card -->
           </section>
           <!-- right col -->
@@ -618,5 +586,5 @@
 
 {{-- end content --}}
 
- 
+
   @endsection

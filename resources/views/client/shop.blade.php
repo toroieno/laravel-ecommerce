@@ -9,33 +9,33 @@ Shop
 
 
 	<!-- start content -->
-	
-    <div class="hero-wrap hero-bread" style="background-image: url('{{asset('frontend/images/bg_1.jpg')}}');">
+
+    <div class="hero-wrap hero-bread" style="background-image: url('{{asset('frontend/images/banner2.jpg')}}');">
         <div class="container">
           <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">
-                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Products</span></p>
-              <h1 class="mb-0 bread">Products</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="/">Trang chủ</a></span> <span>Sản phẩm</span></p>
+              <h1 class="mb-0 bread">Sản phẩm</h1>
             </div>
           </div>
         </div>
       </div>
-  
+
       <section class="ftco-section">
           <div class="container">
               <div class="row justify-content-center">
                   <div class="col-md-10 mb-5 text-center">
                       <ul class="product-category">
-                          <li><a href="{{url('/shop')}}" class="{{request()->is('shop')?'active':''}}">All</a></li>
+                          <li><a href="{{url('/shop')}}" class="{{request()->is('shop')?'active':''}}">Tất cả</a></li>
                             @foreach ($categories as $category)
                             <li><a href="{{url('/view_product_by_category/'.$category->category_name)}}" class="{{request()->is('view_product_by_category/'.$category->category_name)?'active':''}}">{{$category->category_name}}</a></li>
                             @endforeach
-                         
+
                       </ul>
                   </div>
               </div>
               <div class="row">
-                 
+
                 @foreach ($products as $product)
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
@@ -72,8 +72,8 @@ Shop
                 @endforeach
 
 
-                
-                  
+
+
               </div>
               <div class="row mt-5">
             <div class="col text-center">
@@ -92,6 +92,6 @@ Shop
           </div>
           </div>
       </section>
-  
-      
+
+
 @endsection

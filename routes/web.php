@@ -22,6 +22,10 @@ use App\Http\Controllers\PdfController;
 Route::get('/admin',[AdminController::class, 'admin']);
 
 
+Route::get('/clients',[ClientController::class, 'clients']);
+Route::get('/delete_client/{id}',[ClientController::class, 'delete_client']);
+
+
 Route::get('/addcategory',[CategoryController::class, 'addcategory']);
 Route::post('/savecategory',[CategoryController::class, 'savecategory']);
 Route::get('/categories',[CategoryController::class, 'categories']);

@@ -1,9 +1,9 @@
  <!-- Main Sidebar Container -->
  <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index.html" class="brand-link">
-      <img src="{{asset('backend/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    <a href="index.html" class="brand-link text-center">
+      {{-- <img src="{{asset('backend/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
+      <span class="brand-text font-weight-light">Trang quản trị</span>
     </a>
 
     <!-- Sidebar -->
@@ -11,10 +11,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset('backend/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{asset('backend/dist/img/cats/cat1.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">Nhóm 3 - T5 Shop</a>
         </div>
       </div>
 
@@ -27,7 +27,7 @@
             <a href="#" class="nav-link {{request()->is('admin')? 'active':''}} ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
+                Thống kê
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -40,14 +40,35 @@
               </li>
             </ul>
           </li>
-          
+
+          <li class="nav-item has-treeview {{request()->is('addclient')? 'menu-open':
+            ''}} {{request()->is('clients') ? 'menu-open' : ''}}">
+            <a href="#" class="nav-link {{request()->is('addclient')? 'active':
+                ''}} {{request()->is('clients') ? 'active' : ''}}">
+              <i class="nav-icon fas fa-folder"></i>
+              <p>
+                Khách hàng
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview ">
+              <li class="nav-item">
+                <a href="{{url('/clients')}}" class="nav-link {{request()->is
+                    ('clients')? 'active': ''}}">
+                  <i class="far fa-file nav-icon"></i>
+                  <p>Danh sách khách hàng</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
           <li class="nav-item has-treeview {{request()->is('addcategory')? 'menu-open':
             ''}} {{request()->is('categories') ? 'menu-open' : ''}}">
             <a href="#" class="nav-link {{request()->is('addcategory')? 'active':
                 ''}} {{request()->is('categories') ? 'active' : ''}}">
               <i class="nav-icon fas fa-folder"></i>
               <p>
-                Categories
+                Loại sản phẩm
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -56,7 +77,7 @@
                 <a href="{{url('/addcategory')}}" class="nav-link {{request()->is
                 ('addcategory')? 'active': ''}}">
                   <i class="far fa-file nav-icon"></i>
-                  <p>Add category</p>
+                  <p>Thêm loại sản phẩm</p>
                 </a>
               </li>
             </ul>
@@ -65,7 +86,7 @@
                 <a href="{{url('/categories')}}" class="nav-link {{request()->is
                     ('categories')? 'active': ''}}">
                   <i class="far fa-file nav-icon"></i>
-                  <p>Categories</p>
+                  <p>Danh sách loại sản phẩm</p>
                 </a>
               </li>
             </ul>
@@ -86,7 +107,7 @@
                 <a href="{{url('/addslider')}}" class="nav-link {{request()->is
                 ('addslider')?'active':''}}">
                   <i class="far fa-file nav-icon"></i>
-                  <p>Add slider</p>
+                  <p>Thêm slider</p>
                 </a>
               </li>
             </ul>
@@ -108,7 +129,7 @@
                 'active':''}}">
               <i class="nav-icon fas fa-folder"></i>
               <p>
-                Products
+                Sản phẩm
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -117,7 +138,7 @@
                 <a href="{{url('addproduct')}}" class="nav-link {{request()->is('addproduct')?
                     'active':''}}">
                   <i class="far fa-file nav-icon"></i>
-                  <p>Add product</p>
+                  <p>Thêm sản phẩm mới</p>
                 </a>
               </li>
             </ul>
@@ -126,7 +147,7 @@
                 <a href="{{url('/products')}}" class="nav-link {{request()->is('products')?
                     'active':''}}">
                   <i class="far fa-file nav-icon"></i>
-                  <p>Products</p>
+                  <p>Danh sách sản phẩm</p>
                 </a>
               </li>
             </ul>
@@ -138,7 +159,7 @@
                 'active':''}}">
               <i class="nav-icon fas fa-folder"></i>
               <p>
-                Orders
+                Đặt hàng
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -147,17 +168,17 @@
                 <a href="{{url('/orders')}}" class="nav-link {{request()->is('orders')?
                     'active':''}}">
                   <i class="far fa-file nav-icon"></i>
-                  <p>Orders</p>
+                  <p>Danh sách đơn hàng</p>
                 </a>
               </li>
             </ul>
           </li>
 
-          <li class="nav-header">MISCELLANEOUS</li>
+          <li class="nav-header">Thông tin thêm</li>
           <li class="nav-item">
             <a href="https://adminlte.io/docs/3.0/" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
-              <p>Documentation</p>
+              <p>Tài liệu</p>
             </a>
           </li>
         </ul>

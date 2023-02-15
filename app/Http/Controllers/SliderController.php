@@ -12,7 +12,7 @@ class SliderController extends Controller
    public function addslider(){
        return view('admin.addslider');
    }
-   
+
    public function sliders(){
        $sliders=Slider::All();
        return view('admin.sliders')->with('sliders',$sliders);
@@ -20,7 +20,7 @@ class SliderController extends Controller
 
    public function saveslider(Request $request){
                  $this->validate($request,['description1'=> 'required',
-                                            'description2'=>'required',                                          
+                                            'description2'=>'required',
                                             'slider_image'=>'image|nullable|max:1999|required']);
 
 // get file name with ext
@@ -44,7 +44,7 @@ $slider->status=1;
 
 $slider->save();
 
-return back()->with('status', 'The slider was saved');
+return back()->with('status', 'Thông tin slider đã được lưu!');
    }
 
    public function edit_slider($id){
@@ -54,14 +54,14 @@ return back()->with('status', 'The slider was saved');
 
    public function updateslider(Request $request){
     $this->validate($request,['description1'=> 'required',
-                                'description2'=>'required',                                          
+                                'description2'=>'required',
                                 'slider_image'=>'image|nullable|max:1999']);
 
     $slider= Slider::find($request->input('id'));
         $slider->description1=$request->input('description1');
         $slider->description2=$request->input('description2');
 
-        
+
         if($request->hasfile('slider_image')){
             // get file name with ext
             $fileNameWithExt=$request->file('slider_image')->getClientOriginalName();
@@ -74,31 +74,31 @@ return back()->with('status', 'The slider was saved');
             // upload image
             $path=$request->file('slider_image')->storeAs('public/slider_images',
             $fileNameToStore);
-        
-            Storage::delete('public/slider_images/'.$slider->slider_image);            
-            
+
+            Storage::delete('public/slider_images/'.$slider->slider_image);
+
             $slider->slider_image=$fileNameToStore;}
-        
+
         $slider->update();
 
-        return redirect('/sliders')->with('status', 'The slider was updated');
+        return redirect('/sliders')->with('status', 'Thông tin slider đã được cập nhật!');
    }
 
    public function delete_slider($id){
        $slider=Slider::find($id);
-       
+
        Storage::delete('public/slider_images/'.$slider->slider_image);
-       
+
        $slider->delete();
-       
-       return back()->with('status','The slider was deleted');
+
+       return back()->with('status','Xoá slider thành công!');
    }
 
    public function activate_slider($id){
        $slider=Slider::find($id);
        $slider->status=1;
        $slider->update();
-       
+
        return back()->with('status','The slider has been activated');
    }
 
@@ -106,7 +106,7 @@ return back()->with('status', 'The slider was saved');
        $slider=Slider::find($id);
        $slider->status=0;
        $slider->update();
-       
+
        return back()->with('status','The slider has been unactivated');
    }
 }

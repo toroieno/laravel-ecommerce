@@ -1,0 +1,8 @@
+authtoken: 2Fcz8fO3Ay5fQaM5mSEB7IB7v4M_7yLwYReCaCWu7EY9AWfjD
+tunnels:
+  your-tunnel-name:
+    proto: http
+    addr: 8003
+    hostname: https://d49d-2405-4802-254-ed10-307e-f848-c0a8-389c.ap.ngrok.io
+    crt: /path/to/your/certificate.crt
+    key: /path/to/your/private.key

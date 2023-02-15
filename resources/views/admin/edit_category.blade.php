@@ -8,12 +8,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Category</h1>
+            <h1>Loại sản phẩm</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Category</li>
+              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+              <li class="breadcrumb-item active">Loại sản phẩm</li>
             </ol>
           </div>
         </div>
@@ -29,14 +29,14 @@
             <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Edit category</small></h3>
+                <h3 class="card-title">Sửa loại sản phẩm</small></h3>
               </div>
 
               @if(count($errors)>0)
                 <div class="alert alert-danger">
                   <ul>
                     @foreach ($errors->all() as $error)
-                      <li>{{$error}}</li>  
+                      <li>{{$error}}</li>
                     @endforeach
                   </ul>
                 </div>
@@ -52,9 +52,9 @@
                   <div class="form-group">
                       {{Form::hidden('id', $category->id)}}
                     {{-- <label for="exampleInputEmail1">Category name</label> --}}
-                    {{Form::label('','Category name', ['for'=>'exampleInputEmail1'])}}
+                    {{Form::label('','Tên loại sản phẩm', ['for'=>'exampleInputEmail1'])}}
                     {{Form::text('category name',$category->category_name, ['class'=>'form-control', 'id'=>
-                    'exampleInputEmail1', 'placeholder'=> 'Enter category'])}}
+                    'exampleInputEmail1', 'placeholder'=> 'Nhập mới ...'])}}
                     {{-- <input type="text" name="category_name" class="form-control" id="exampleInputEmail1" placeholder="Enter category"> --}}
                   </div>
                 </div>
@@ -62,7 +62,7 @@
                 <div class="card-footer">
                   <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
                   {{-- <input type="submit" class="btn btn-primary" value="Save" > --}}
-                  {{Form::submit('Update', ['class'=>'btn btn-primary'])}}
+                  {{Form::submit('Cập nhật', ['class'=>'btn btn-primary'])}}
                 </div>
                 {!!Form::close()!!}
               {{-- </form> --}}

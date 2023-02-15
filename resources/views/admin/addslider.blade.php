@@ -12,7 +12,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
               <li class="breadcrumb-item active">Slider</li>
             </ol>
           </div>
@@ -29,7 +29,7 @@
             <!-- jquery validation -->
             <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title">Add slider</h3>
+                <h3 class="card-title">Thêm mới slider</h3>
               </div>
               @if (Session::has('status'))
               <div class="alert alert-success">
@@ -41,7 +41,7 @@
                 <div class="alert alert-danger">
                   <ul>
                     @foreach ($errors->all() as $error)
-                      <li>{{$error}}</li>  
+                      <li>{{$error}}</li>
                     @endforeach
                   </ul>
                 </div>
@@ -54,40 +54,40 @@
               {{csrf_field()}}
               <div class="card-body">
                 <div class="form-group">
-                  {{Form::label('','Description one', ['for'=>'exampleInputEmail1'])}}
+                  {{Form::label('','Mô tả 1', ['for'=>'exampleInputEmail1'])}}
                   {{Form::text('description1','', ['class'=>'form-control', 'id'=>
-                  'exampleInputEmail1', 'placeholder'=> 'Enter description one'])}}
-                </div>          
+                  'exampleInputEmail1', 'placeholder'=> 'Nhập mô tả ...'])}}
+                </div>
                 <div class="form-group">
-                  {{Form::label('','Description two', ['for'=>'exampleInputEmail1'])}}
+                  {{Form::label('','Mô tả 2', ['for'=>'exampleInputEmail1'])}}
                   {{Form::text('description2','', ['class'=>'form-control', 'id'=>
-                  'exampleInputEmail1', 'placeholder'=> 'Enter description two'])}}
-                </div>          
-  
-                <label for="exampleInputFile">Slider image</label>
+                  'exampleInputEmail1', 'placeholder'=> 'Nhập mô tả ...'])}}
+                </div>
+
+                <label for="exampleInputFile">Ảnh slider</label>
                 <div class="input-group">
                   <div class="custom-file">
-                 
+
                     {{Form::file('slider_image', ['class'=>'custom-file-input', 'id'=>
                     'exampleInputFile'])}}
-                  {{Form::label('', 'Choose file', ['class'=>'custom-file-label', 
+                  {{Form::label('', 'Chọn ảnh', ['class'=>'custom-file-label',
                   'for'=>'exampleInputFile'])}}
-                  
+
                   </div>
                   <div class="input-group-append">
-                    <span class="input-group-text">Upload</span>
+                    <span class="input-group-text">Tải lên</span>
                   </div>
                 </div>
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
- 
-                {{Form::submit('Save', ['class'=>'btn btn-success'])}}
+
+                {{Form::submit('Lưu', ['class'=>'btn btn-success'])}}
 
               </div>
               {!!Form::close()!!}
             </div>
-            <!-- /.card --> 
+            <!-- /.card -->
             </div>
           <!--/.col (left) -->
           <!-- right column -->
@@ -159,5 +159,4 @@ $(function () {
 });
 </script>
 @endsection
- 
- 
+

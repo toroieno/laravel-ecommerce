@@ -8,12 +8,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Ordes</h1>
+            <h1>Đặt hàng</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Ordes</li>
+              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+              <li class="breadcrumb-item active">Đặt hàng</li>
             </ol>
           </div>
         </div>
@@ -27,18 +27,18 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">All Ordes</h3>
+                <h3 class="card-title">Tất cả đơn</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Date</th>
-                    <th>Address</th>
-                    <th>Client Names</th>
-                    <th>Orders</th>
-                    <th>Actions</th>
+                    <th>Thời gian</th>
+                    <th>Địa chỉ</th>
+                    <th>Tên khách hàng</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Hành động</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -47,29 +47,29 @@
                         <td>{{$order->created_at}}</td>
                         <td>{{$order->address}}</td>
                         <td>{{$order->name}}</td>
-                        <td> 
+                        <td>
                           {{-- {{dd($order->cart->items)}} --}}
                             @foreach ((array)$order->cart->items as $item)
                                 {{$item['product_name'].','}}
                             @endforeach
                         </td>
-                        
+
                         <td>
                           <a href="{{url('/viewpdforder/'.$order->id)}}" class="btn btn-primary"><i class="nav-icon fas fa-eye"></i></a>
                         </td>
                       </tr>
                       @endforeach
-               
-                
+
+
                   </tbody>
                   <tfoot>
-                  <tr>
-                    <th>Date</th>
-                    <th>Address</th>
-                    <th>Client Names</th>
-                    <th>Orders</th>
-                    <th>Actions</th>
-                  </tr>
+                    <tr>
+                        <th>Thời gian</th>
+                        <th>Địa chỉ</th>
+                        <th>Tên khách hàng</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Hành động</th>
+                      </tr>
                   </tfoot>
                 </table>
               </div>
@@ -123,6 +123,27 @@
     $("#example1").DataTable({
       "responsive": true,
       "autoWidth": false,
+      language: {
+            processing: "Lấy dữ liệu",
+            search: "Tìm kiếm",
+            lengthMenu: "Số lượng đơn hàng mỗi trang _MENU_",
+            info: "Bản ghi từ _START_ đến _END_ trong số _TOTAL_ bản ghi",
+            infoEmpty: "Khi không có dữ liệu, Hiển thị 0 bản ghi trong 0 tổng cộng 0 ",
+            infoFiltered: "(Message bổ sung cho info khi không search đc record nào _MAX_)",
+            loadingRecords: "",
+            zeroRecords: "Khi tìm kiếm không match với record nào",
+            emptyTable: "Không có dữ liệu",
+            paginate: {
+                first: "Trang đầu",
+                previous: "Trang trước",
+                next: "Trang sau",
+                last: "Trang cuối"
+            },
+            aria: {
+                sortAscending: ": Sắp xếp cột",
+                sortDescending: ": Sắp xếp cột",
+            }
+        },
     });
     $('#example2').DataTable({
       "paging": true,
@@ -132,6 +153,27 @@
       "info": true,
       "autoWidth": false,
       "responsive": true,
+      language: {
+            processing: "Lấy dữ liệu",
+            search: "Tìm kiếm",
+            lengthMenu: "Số lượng đơn hàng mỗi trang _MENU_",
+            info: "Bản ghi từ _START_ đến _END_ trong số _TOTAL_ bản ghi",
+            infoEmpty: "Khi không có dữ liệu, Hiển thị 0 bản ghi trong 0 tổng cộng 0 ",
+            infoFiltered: "(Message bổ sung cho info khi không search đc record nào _MAX_)",
+            loadingRecords: "",
+            zeroRecords: "Khi tìm kiếm không match với record nào",
+            emptyTable: "Không có dữ liệu",
+            paginate: {
+                first: "Trang đầu",
+                previous: "Trang trước",
+                next: "Trang sau",
+                last: "Trang cuối"
+            },
+            aria: {
+                sortAscending: ": Sắp xếp cột",
+                sortDescending: ": Sắp xếp cột",
+            }
+        },
     });
   });
 </script>

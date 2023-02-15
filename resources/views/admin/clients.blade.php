@@ -1,21 +1,20 @@
-@extends('admin_layout.admin')
 
+@extends('admin_layout.admin')
 @section('content')
 {{Form::hidden('', $increment=1)}}
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+ <!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Sản phẩm</h1>
+            <h1>Danh sách khách hàng</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Sản phẩm</li>
+              <li class="breadcrumb-item active">Danh sách khách hàng</li>
             </ol>
           </div>
         </div>
@@ -29,7 +28,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Tất cả sản phẩm</h3>
+                <h3 class="card-title">Danh sách</h3>
               </div>
               @if (Session::has('status'))
               <div class="alert alert-success">
@@ -41,49 +40,30 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>STT</th>
-                    <th>Hình ảnh</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Loại sản phẩm</th>
-                    <th>Giá sản phẩm</th>
-                    <th>Hành động</th>
+                    <th width="10%" class="text-center">STT</th>
+                    <th>Email</th>
+                    <th width="15%" class="text-center">Hành động</th>
                   </tr>
                   </thead>
                   <tbody>
-                    @foreach ($products as $product)
+
+                    @foreach ($clients as $client)
                     <tr>
-                      <td>{{$increment}}</td>
-                      <td>
-                        <img src="/storage/product_images/{{$product->product_image}}" style="height : 50px; width : 50px" class="img-circle elevation-2" alt="User Image">
-                      </td>
-                      <td>{{$product->product_name}}</td>
-                      <td> {{$product->product_category}}</td>
-                      <td>{{number_format($product->product_price)." đ"}}</td>
-                      <td>
-                        @if ($product->status==1)
-                        <a href="{{url('/unactivate_product/'.$product->id)}}" class="btn btn-success">Hết hàng</a>
-                       @else
-                       <a href="{{url('/activate_product/'.$product->id)}}" class="btn btn-warning">Mở bán</a>
-
-                        @endif
-                        <a href="{{url('/edit_product/'.$product->id)}}" class="btn btn-primary"><i class="nav-icon fas fa-edit"></i></a>
-                        <a href="{{url('/delete_product/'.$product->id)}}" id="delete" class="btn btn-danger" ><i class="nav-icon fas fa-trash"></i></a>
-                      </td>
-                    </tr>
-                        {{Form::hidden('', $increment=$increment+1)}}
-
+                    <td class="text-center">{{$increment}}</td>
+                    <td>{{$client->email}}
+                    </td>
+                    <td class="text-center">
+                      <a href="{{url('/delete_client/'.$client->id)}}" id="delete" class="btn btn-danger" ><i class="nav-icon fas fa-trash"></i></a>
+                    </td>
+                  </tr>
+                      {{Form::hidden('', $increment=$increment+1)}}
                     @endforeach
-
-
                   </tbody>
                   <tfoot>
                     <tr>
-                        <th>STT</th>
-                        <th>Hình ảnh</th>
-                        <th>Tên sản phẩm</th>
-                        <th>Loại sản phẩm</th>
-                        <th>Giá sản phẩm</th>
-                        <th>Hành động</th>
+                        <th class="text-center">STT</th>
+                        <th>Email</th>
+                        <th class="text-center">Hành động</th>
                       </tr>
                   </tfoot>
                 </table>
@@ -101,6 +81,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
 @endsection
 
 @section('style')
@@ -141,7 +122,7 @@
       language: {
             processing: "Lấy dữ liệu",
             search: "Tìm kiếm",
-            lengthMenu: "Số lượng sản phẩm mỗi trang _MENU_",
+            lengthMenu: "Số lượng khách hàng mỗi trang _MENU_",
             info: "Bản ghi từ _START_ đến _END_ trong số _TOTAL_ bản ghi",
             infoEmpty: "Khi không có dữ liệu, Hiển thị 0 bản ghi trong 0 tổng cộng 0 ",
             infoFiltered: "(Message bổ sung cho info khi không search đc record nào _MAX_)",
@@ -171,7 +152,7 @@
       language: {
             processing: "Lấy dữ liệu",
             search: "Tìm kiếm",
-            lengthMenu: "Số lượng sản phẩm mỗi trang _MENU_",
+            lengthMenu: "Số lượng khách hàng mỗi trang _MENU_",
             info: "Bản ghi từ _START_ đến _END_ trong số _TOTAL_ bản ghi",
             infoEmpty: "Khi không có dữ liệu, Hiển thị 0 bản ghi trong 0 tổng cộng 0 ",
             infoFiltered: "(Message bổ sung cho info khi không search đc record nào _MAX_)",

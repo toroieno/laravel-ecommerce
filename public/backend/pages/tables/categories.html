@@ -182,7 +182,7 @@
               </li>
             </ul>
           </li>
-          
+
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-folder"></i>
@@ -376,7 +376,7 @@
   </div>
   <!-- /.content-wrapper -->
 
-  
+
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.1.0-pre
@@ -428,6 +428,28 @@
     $("#example1").DataTable({
       "responsive": true,
       "autoWidth": false,
+      language: {
+            processing: "Message khi đang tải dữ liệu",
+            search: "Placeholder của input tìm kiếm",
+            lengthMenu: "Điều chỉnh số lượng bản ghi trên 1 trang _MENU_ ",
+            info: "Bản ghi từ _START_ đến _END_ Tổng công _TOTAL_ bản ghi",
+            infoEmpty: "Khi không có dữ liệu, Hiển thị 0 bản ghi trong 0 tổng cộng 0 ",
+            infoFiltered: "(Message bổ sung cho info khi không search đc record nào _MAX_)",
+            infoPostFix: "Alo Alo", // Cái này khi thêm vào nó sẽ đứng sau info
+            loadingRecords: "",
+            zeroRecords: "Khi tìm kiếm không match với record nào",
+            emptyTable: "Không có dữ liệu",
+            paginate: {
+                first: "Trang đầu",
+                previous: "Trang trước",
+                next: "Trang sau",
+                last: "Trang cuối"
+            },
+            aria: {
+                sortAscending: ": Message khi đang sắp xếp theo column",
+                sortDescending: ": Message khi đang sắp xếp theo column",
+            }
+        },
     });
     $('#example2').DataTable({
       "paging": true,
@@ -437,6 +459,28 @@
       "info": true,
       "autoWidth": false,
       "responsive": true,
+      language: {
+            processing: "Message khi đang tải dữ liệu",
+            search: "Placeholder của input tìm kiếm",
+            lengthMenu: "Điều chỉnh số lượng bản ghi trên 1 trang _MENU_ ",
+            info: "Bản ghi từ _START_ đến _END_ Tổng công _TOTAL_ bản ghi",
+            infoEmpty: "Khi không có dữ liệu, Hiển thị 0 bản ghi trong 0 tổng cộng 0 ",
+            infoFiltered: "(Message bổ sung cho info khi không search đc record nào _MAX_)",
+            infoPostFix: "Alo Alo", // Cái này khi thêm vào nó sẽ đứng sau info
+            loadingRecords: "",
+            zeroRecords: "Khi tìm kiếm không match với record nào",
+            emptyTable: "Không có dữ liệu",
+            paginate: {
+                first: "Trang đầu",
+                previous: "Trang trước",
+                next: "Trang sau",
+                last: "Trang cuối"
+            },
+            aria: {
+                sortAscending: ": Message khi đang sắp xếp theo column",
+                sortDescending: ": Message khi đang sắp xếp theo column",
+            }
+        },
     });
   });
 </script>

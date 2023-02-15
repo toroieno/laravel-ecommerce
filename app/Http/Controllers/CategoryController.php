@@ -13,12 +13,12 @@ class CategoryController extends Controller
 
     public function savecategory(Request $request){
         $this->validate($request, ['category_name'=>'required|unique:categories']);
-        
+
         $category=new Category();
         $category->category_name=$request->input('category_name');
         $category->save();
 
-        return back()->with('status', 'The category was saved');
+        return back()->with('status', 'Loại sản phẩm này đã được lưu');
     }
     public function categories(){
         $categories=Category::All();
@@ -38,7 +38,7 @@ class CategoryController extends Controller
             $category->category_name=$request->input('category_name');
 
             $category->update();
-            
+
         return redirect('/categories')->with('status',
          'The category has been updated succesfully');
         }
@@ -46,8 +46,8 @@ class CategoryController extends Controller
         public function delete_category($id){
             $category=Category::find($id);
             $category->delete();
-        return back()->with('status', 'The category was deleted');
-            
+        return back()->with('status', 'Loại sản phẩm này đã được xoá');
+
         }
-        
+
         }

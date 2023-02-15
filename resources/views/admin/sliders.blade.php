@@ -14,7 +14,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
               <li class="breadcrumb-item active">Sliders</li>
             </ol>
           </div>
@@ -29,7 +29,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">All Sliders</h3>
+                <h3 class="card-title">Tất cả Sliders</h3>
               </div>
               @if (Session::has('status'))
               <div class="alert alert-success">
@@ -41,11 +41,11 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Num.</th>
-                    <th>Picture</th>
-                    <th>Description one</th>
-                    <th>Description Two</th>
-                    <th>Actions</th>
+                    <th>STT</th>
+                    <th>Hình ảnh</th>
+                    <th>Mô tả 1</th>
+                    <th>Mô tả 2</th>
+                    <th>Hành động</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -61,29 +61,29 @@
                     <td>{{$slider->description2}}</td>
                     <td>
                       @if ($slider->status==1)
-                      <a href="{{url('/unactivate_slider/'.$slider->id)}}" class="btn btn-success">Unactivate</a>                                
+                      <a href="{{url('/unactivate_slider/'.$slider->id)}}" class="btn btn-success">Tắt</a>
                      @else
-                     <a href="{{url('/activate_slider/'.$slider->id)}}" class="btn btn-warning">Activate</a>        
-                      
+                     <a href="{{url('/activate_slider/'.$slider->id)}}" class="btn btn-warning">Hiển thị</a>
+
                       @endif
-            
+
                       <a href="{{url('/edit_slider/'.$slider->id)}}" class="btn btn-primary"><i class="nav-icon fas fa-edit"></i></a>
                       <a href="{{url('/delete_slider/'.$slider->id)}}" id="delete" class="btn btn-danger" ><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
 
                     {{Form::hidden('', $increment=$increment+1)}}
-               
+
                   @endforeach
                   </tbody>
                   <tfoot>
-                  <tr>
-                    <th>Num.</th>
-                    <th>Picture</th>
-                    <th>Description one</th>
-                    <th>Description Two</th>
-                    <th>Actions</th>
-                  </tr>
+                    <tr>
+                        <th>STT</th>
+                        <th>Hình ảnh</th>
+                        <th>Mô tả 1</th>
+                        <th>Mô tả 2</th>
+                        <th>Hành động</th>
+                      </tr>
                   </tfoot>
                 </table>
               </div>
@@ -137,6 +137,27 @@
     $("#example1").DataTable({
       "responsive": true,
       "autoWidth": false,
+      language: {
+            processing: "Lấy dữ liệu",
+            search: "Tìm kiếm",
+            lengthMenu: "Số lượng slider mỗi trang _MENU_",
+            info: "Bản ghi từ _START_ đến _END_ trong số _TOTAL_ bản ghi",
+            infoEmpty: "Khi không có dữ liệu, Hiển thị 0 bản ghi trong 0 tổng cộng 0 ",
+            infoFiltered: "(Message bổ sung cho info khi không search đc record nào _MAX_)",
+            loadingRecords: "",
+            zeroRecords: "Khi tìm kiếm không match với record nào",
+            emptyTable: "Không có dữ liệu",
+            paginate: {
+                first: "Trang đầu",
+                previous: "Trang trước",
+                next: "Trang sau",
+                last: "Trang cuối"
+            },
+            aria: {
+                sortAscending: ": Sắp xếp cột",
+                sortDescending: ": Sắp xếp cột",
+            }
+        },
     });
     $('#example2').DataTable({
       "paging": true,
@@ -146,6 +167,27 @@
       "info": true,
       "autoWidth": false,
       "responsive": true,
+      language: {
+            processing: "Lấy dữ liệu",
+            search: "Tìm kiếm",
+            lengthMenu: "Số lượng slider mỗi trang _MENU_",
+            info: "Bản ghi từ _START_ đến _END_ trong số _TOTAL_ bản ghi",
+            infoEmpty: "Khi không có dữ liệu, Hiển thị 0 bản ghi trong 0 tổng cộng 0 ",
+            infoFiltered: "(Message bổ sung cho info khi không search đc record nào _MAX_)",
+            loadingRecords: "",
+            zeroRecords: "Khi tìm kiếm không match với record nào",
+            emptyTable: "Không có dữ liệu",
+            paginate: {
+                first: "Trang đầu",
+                previous: "Trang trước",
+                next: "Trang sau",
+                last: "Trang cuối"
+            },
+            aria: {
+                sortAscending: ": Sắp xếp cột",
+                sortDescending: ": Sắp xếp cột",
+            }
+        },
     });
   });
 </script>

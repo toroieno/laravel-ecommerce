@@ -8,12 +8,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Product</h1>
+            <h1>Sản phẩm</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Product</li>
+              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+              <li class="breadcrumb-item active">Sản phẩm</li>
             </ol>
           </div>
         </div>
@@ -29,7 +29,7 @@
             <!-- jquery validation -->
             <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Edit product</h3>
+                <h3 class="card-title">Sửa sản phẩm</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -39,12 +39,12 @@
                   {{Session::get('status')}}
                 </div>
                 @endif
-  
+
                 @if(count($errors)>0)
                   <div class="alert alert-danger">
                     <ul>
                       @foreach ($errors->all() as $error)
-                        <li>{{$error}}</li>  
+                        <li>{{$error}}</li>
                       @endforeach
                     </ul>
                   </div>
@@ -58,42 +58,42 @@
                       {{Form::hidden('id', $product->id)}}
                     {{-- <label for="exampleInputEmail1">Product name</label>
                     <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Enter product name"> --}}
-                    {{Form::label('','Product name', ['for'=>'exampleInputEmail1'])}}
+                    {{Form::label('','Tên sản phẩm', ['for'=>'exampleInputEmail1'])}}
                     {{Form::text('product name',$product->product_name, ['class'=>'form-control', 'id'=>
-                    'exampleInputEmail1', 'placeholder'=> 'Enter product'])}}
+                    'exampleInputEmail1', 'placeholder'=> 'Nhập tên mới ...'])}}
                   </div>
                   <div class="form-group">
                     {{-- <label for="exampleInputEmail1">Product price</label>
                     <input type="number" name="product_price" class="form-control" id="exampleInputEmail1" placeholder="Enter product price" min="1"> --}}
-                    {{Form::label('','Product price', ['for'=>'exampleInputEmail1'])}}
+                    {{Form::label('','Giá sản phẩm', ['for'=>'exampleInputEmail1'])}}
                     {{Form::text('product price',$product->product_price, ['class'=>'form-control', 'id'=>
-                    'exampleInputEmail1', 'placeholder'=> 'Enter product price'])}}
+                    'exampleInputEmail1', 'placeholder'=> 'Nhập giá mới ...'])}}
                   </div>
                   <div class="form-group">
-                    <label>Product category</label>
+                    <label>Loại sản phẩm</label>
                     {{-- <select class="form-control select2" style="width: 100%;">
                       <option selected="selected">Select</option>
                       @foreach ($categories as $category)
                       <option>{{$category->category_name}}</option>
-                          
+
                       @endforeach --}}
                       {{-- <option>Vegetable</option> --}}
                     {{-- </select> --}}
                     {{Form::select('product_category', $categories,$product->product_category,['class'=>'form control select2'])}}
                   </div>
-                  <label for="exampleInputFile">Product image</label>
+                  <label for="exampleInputFile">Ảnh sản phẩm</label>
                   <div class="input-group">
                     <div class="custom-file">
                       {{-- <input type="file" class="custom-file-input" id="exampleInputFile">
                       <label class="custom-file-label" for="exampleInputFile">Choose file</label> --}}
                       {{Form::file('product_image', ['class'=>'custom-file-input', 'id'=>
                       'exampleInputFile'])}}
-                    {{Form::label('', 'Choose file', ['class'=>'custom-file-label', 
+                    {{Form::label('', 'Chọn ảnh', ['class'=>'custom-file-label',
                     'for'=>'exampleInputFile'])}}
-                    
+
                     </div>
                     <div class="input-group-append">
-                      <span class="input-group-text">Upload</span>
+                      <span class="input-group-text">Tải lên</span>
                     </div>
                   </div>
                 </div>
@@ -101,7 +101,7 @@
                 <div class="card-footer">
                   <!-- <button type="submit" class="btn btn-success">Submit</button> -->
                   {{-- <input type="submit" class="btn btn-success" value="Save"> --}}
-                  {{Form::submit('Update', ['class'=>'btn btn-success'])}}
+                  {{Form::submit('Cập nhật', ['class'=>'btn btn-success'])}}
 
                 </div>
                 {!!Form::close()!!}

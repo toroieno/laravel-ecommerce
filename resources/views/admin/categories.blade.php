@@ -9,12 +9,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Categories</h1>
+            <h1>Loại sản phẩm</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Categories</li>
+              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+              <li class="breadcrumb-item active">Loại sản phẩm</li>
             </ol>
           </div>
         </div>
@@ -28,7 +28,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">All categories</h3>
+                <h3 class="card-title">Danh sách</h3>
               </div>
               @if (Session::has('status'))
               <div class="alert alert-success">
@@ -40,13 +40,13 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Num.</th>
-                    <th>Category Name</th>
-                    <th>Actions</th>
+                    <th>STT</th>
+                    <th>Tên</th>
+                    <th>Hành động</th>
                   </tr>
                   </thead>
                   <tbody>
-              
+
                     @foreach ($categories as $category)
                     <tr>
                     <td>{{$increment}}</td>
@@ -61,11 +61,11 @@
                     @endforeach
                   </tbody>
                   <tfoot>
-                  <tr>
-                    <th>Num.</th>
-                    <th>Category Name</th>
-                    <th>Actions</th>
-                  </tr>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên</th>
+                        <th>Hành động</th>
+                      </tr>
                   </tfoot>
                 </table>
               </div>
@@ -120,6 +120,27 @@
     $("#example1").DataTable({
       "responsive": true,
       "autoWidth": false,
+      language: {
+            processing: "Lấy dữ liệu",
+            search: "Tìm kiếm",
+            lengthMenu: "Số lượng sản phẩm mỗi trang _MENU_",
+            info: "Bản ghi từ _START_ đến _END_ trong số _TOTAL_ bản ghi",
+            infoEmpty: "Khi không có dữ liệu, Hiển thị 0 bản ghi trong 0 tổng cộng 0 ",
+            infoFiltered: "(Message bổ sung cho info khi không search đc record nào _MAX_)",
+            loadingRecords: "",
+            zeroRecords: "Khi tìm kiếm không match với record nào",
+            emptyTable: "Không có dữ liệu",
+            paginate: {
+                first: "Trang đầu",
+                previous: "Trang trước",
+                next: "Trang sau",
+                last: "Trang cuối"
+            },
+            aria: {
+                sortAscending: ": Sắp xếp cột",
+                sortDescending: ": Sắp xếp cột",
+            }
+        },
     });
     $('#example2').DataTable({
       "paging": true,
@@ -129,6 +150,27 @@
       "info": true,
       "autoWidth": false,
       "responsive": true,
+      language: {
+            processing: "Lấy dữ liệu",
+            search: "Tìm kiếm",
+            lengthMenu: "Số lượng sản phẩm mỗi trang _MENU_",
+            info: "Bản ghi từ _START_ đến _END_ trong số _TOTAL_ bản ghi",
+            infoEmpty: "Khi không có dữ liệu, Hiển thị 0 bản ghi trong 0 tổng cộng 0 ",
+            infoFiltered: "(Message bổ sung cho info khi không search đc record nào _MAX_)",
+            loadingRecords: "",
+            zeroRecords: "Khi tìm kiếm không match với record nào",
+            emptyTable: "Không có dữ liệu",
+            paginate: {
+                first: "Trang đầu",
+                previous: "Trang trước",
+                next: "Trang sau",
+                last: "Trang cuối"
+            },
+            aria: {
+                sortAscending: ": Sắp xếp cột",
+                sortDescending: ": Sắp xếp cột",
+            }
+        },
     });
   });
 </script>
